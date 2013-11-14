@@ -1,0 +1,12 @@
+*.class
+
+# Package Files #
+*.war
+*.ear
+
+# Junk Files #
+*~
+
+# Documentation #
+*/doc/*
+html*
