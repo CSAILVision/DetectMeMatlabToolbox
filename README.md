@@ -20,13 +20,10 @@ Note: using the dynamic classpath causes some problems that using the static cla
 
 Usage
 -----
-1) Set the iOS device to the same Wi-Fi network as your desktop computer.
-
-2) Obtain the IP Address of the iOS device. Use that address to set the `master_uri` variable in `main.m`.
-
-3) Run the DetectMe app on the iOS device and hit the `stream` button (top right corner) to turn the device into a streaming server.
-
-4) Finally, run `main.m` to see the pictures and detections inside matlab.
+1.  Set the iOS device to the same Wi-Fi network as your desktop computer.
+2.  Obtain the IP Address of the iOS device. Use that address to set the `master_uri` variable in `main.m`.
+3.  Run the DetectMe app on the iOS device and hit the `stream` button (top right corner) to turn the device into a streaming server.
+4.  Finally, run `main.m` to see the pictures and detections inside matlab.
 
 The DetectMe app is able to turn the iOS device into a WebSocket server that streams the images captured as well as the detection. The images and the detections are
 send as JSON objects. The file `process_message.m` is the responsible to translate this JSON objects into Matlab structures and draw the image and the detections.
