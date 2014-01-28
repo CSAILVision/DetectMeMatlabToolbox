@@ -34,6 +34,7 @@ classdef websocket_bridge < handle
             import org.java_websocket.bridge.*
             
             
+            
             % Drafts define the version protocol to be used for the
             % websocket connection
             % More about drafts here: http://github.com/TooTallNate/Java-WebSocket/wiki/Drafts
@@ -46,7 +47,18 @@ classdef websocket_bridge < handle
             % Connect to websocket
             obj.client.connect()
             
+            
+            
+            %hJavaTree = handle(javaTree, 'CallbackProperties');
+            %set(hJavaTree,'MouseClickedCallback',{@treeClicked,fig},'ToolTipText','Tip: use Alt-Click to edit plotting functions');
+            
+            %instead of 
+            
+            %set(javaTree,'MouseClickedCallback',{@treeClicked,fig},'ToolTipText','Tip: use Alt-Click to edit plotting functions');
+            
+            
             % Set callbacks 
+            %hObjClient = handle(obj.client, 'CallbackProperties');
             set(obj.client, 'OnOpenCallback', @(h,e) obj.open_callback(h,e));
             set(obj.client, 'OnMessageCallback', @(h,e) process_message(h,e)); %custom method to process the request
             set(obj.client, 'OnErrorCallback', @(h,e) obj.error_callback(h,e));

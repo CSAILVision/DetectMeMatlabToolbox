@@ -1,12 +1,13 @@
 function process_message(~,e)
     
-    %convert json string to struct
+    % convert json string to struct
     message_struct = loadjson(char(e.message)); 
-
-   
-    raw = base64decode(message_struct.imageBase64, '', 'java'); 
     
-    % decode image stream using Java
+    % obtain the raw bits of the JPEG image after decoding
+    % the base64 image
+    raw = base64decode(message_struct.imageBase64, '', 'java');
+    
+    % convert from raw bits to image
     jImg = javax.imageio.ImageIO.read(java.io.ByteArrayInputStream(raw));
     h = jImg.getHeight;
     w = jImg.getWidth;
@@ -19,7 +20,6 @@ function process_message(~,e)
         pos(1,4) = h;
         set(hfig, 'Position', pos);
     end
-
     
     p = typecast(jImg.getData.getDataStorage, 'uint8');
     img = permute(reshape(p, [3 w h]), [3 2 1]);
