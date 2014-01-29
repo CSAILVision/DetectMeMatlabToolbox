@@ -57,7 +57,7 @@ iOS device with >=iOS 7 and the DetectMe app on it. The device and the matlab te
 
 Installation
 ------------
-In order to handle the Java events with Matlab, the Matlab's Java static classpath needs to include the Java-WebSocket library, `java_websocket.jar` located in `/Java-WebSocket/dist/`. To do so, inside Matlab use `edit('classpath.txt')` and add the absolute location of `java_websocket.jar`.  
+In order to handle the Java events with Matlab, the Matlab's Java static classpath needs to include the Java-WebSocket library, `java_websocket.jar` located in `/matlab_stream/Java-WebSocket/dist/`. To do so, inside Matlab use `edit('classpath.txt')` and add the absolute location of `java_websocket.jar`.  
 
 Note: using the dynamic classpath causes some problems that using the static classpath solves.  
 
