@@ -10,3 +10,5 @@
 # Documentation #
 */doc/*
 html*
+
+.DS_Store
